@@ -32,12 +32,13 @@ compileTestKotlin {
 }
 
 shadowJar {
-    baseName = 'aws-cdk-demo'
-    classifier = null
+    archiveBaseName = 'aws-cdk-demo'
+    archiveClassifier = null
     version = null
 }
 
 task synth(type: JavaExec) {
+    dependsOn shadowJar
     classpath sourceSets.main.runtimeClasspath
     main = "de.md.SampleAppKt"
 }

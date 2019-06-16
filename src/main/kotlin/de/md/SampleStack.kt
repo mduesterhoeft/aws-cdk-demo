@@ -20,7 +20,7 @@ class SampleStack(parent: App, name: String, stackProps: StackProps): Stack(pare
             }
         )
 
-        val api = RestApi(
+        RestApi(
             this, "sampleApi", RestApiProps.builder()
                 .withRestApiName("sampleApi")
                 .build()
